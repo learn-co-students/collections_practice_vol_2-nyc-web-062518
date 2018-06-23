@@ -2,7 +2,7 @@ def first_wa(array)
   array.find { |element| element[0..1] == "wa" }
 end
 
-def count_elements(array)
+def count_elements(hash_array)
   counts = []
   until array == []
     temp = array.select {|element| element != array[0]}
@@ -14,6 +14,7 @@ def count_elements(array)
   counts
 end
 
+# def merge_data
 
 def begins_with_r(array)
   !array.any? do |element|
