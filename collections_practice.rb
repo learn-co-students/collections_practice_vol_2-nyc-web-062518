@@ -25,7 +25,7 @@ def merge_data(first, second)
           keyOfFirst = key
           valueOfFirst = value
           if valueOfFirst == keyOfSecond
-            valueOfSecond << {keyOfFirst => keyOfSecond }
+            valueOfSecond[keyOfFirst] = valueOfFirst
             merged.push(valueOfSecond)
           end
         end
@@ -33,6 +33,28 @@ def merge_data(first, second)
     end
   end
   merged
+end
+
+def find_cool(array)
+  cool_hashes = []
+  array.each do | hash_array |
+    if hash_array[:"temperature"] == "cool"
+      cool_hashes.push(hash_array)
+    end
+  end
+  cool_hashes
+end
+
+def organize_schools(schoolArray)
+  organized = {}
+  schoolArray.each do | school, location_hash |
+    location = location_hash[:"location"]
+    if !organized.keys.include?(location)
+      organized[location] = []
+    end
+    organized[location].push(school)
+  end
+  organized
 end
 
 def begins_with_r(array)
