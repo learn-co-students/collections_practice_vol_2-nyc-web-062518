@@ -25,7 +25,7 @@ def merge_data(first, second)
           keyOfFirst = key
           valueOfFirst = value
           if valueOfFirst == keyOfSecond
-            valueOfSecond[keyOfFirst] = keyOfSecond
+            valueOfSecond << {keyOfFirst => keyOfSecond }
             merged.push(valueOfSecond)
           end
         end
@@ -52,31 +52,3 @@ def remove_non_strings(array)
     !element.is_a?(String)
   end
 end
-
-second =
-  [
-         {
-           "blake" => {
-              :awesomeness => 10,
-                   :height => "74",
-                :last_name => "johnson"
-          },
-          "ashley" => {
-              :awesomeness => 9,
-                   :height => 60,
-                :last_name => "dubs"
-          }
-      }
-  ]
-
-
-first = [
-       {
-        :first_name => "blake"
-    },
-       {
-        :first_name => "ashley"
-    }
-]
-
-merge_data(first, second)
